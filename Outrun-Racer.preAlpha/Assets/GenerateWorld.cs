@@ -21,10 +21,10 @@ public class GenerateWorld : MonoBehaviour
         {
             if(lastPlatform.tag == "platformTSection")
                 dummyTraveller.transform.position = lastPlatform.transform.position +
-                    PlayerController.player.transform.forward * 20;
+                    CarController.player.transform.forward * 20;
             else
                 dummyTraveller.transform.position = lastPlatform.transform.position +
-                    PlayerController.player.transform.forward * 10;
+                    CarController.player.transform.forward * 10;
 
             if (lastPlatform.tag == "stairsUp")
                 dummyTraveller.transform.Translate(0, 5, 0);
