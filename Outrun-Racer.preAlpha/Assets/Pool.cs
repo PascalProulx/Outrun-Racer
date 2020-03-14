@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script that create a pooling system wich take a gameObject randomly and instantiate it
+/// </summary>
 [System.Serializable]
 public class PoolItem
 {

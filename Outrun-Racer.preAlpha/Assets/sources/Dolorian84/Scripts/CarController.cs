@@ -8,20 +8,24 @@ using UnityEngine;
 /// </summary>
 public class CarController : MonoBehaviour
 {
+    
     /// <summary>
     /// Public static variables
     /// </summary>
-    
-    public static GameObject player;            // GameObject that represent the player
-    public static GameObject currentPlatform;   // GameObject that represent the current platform that the player in on
+
+    public static GameObject player;                                    // GameObject that represent the player
+    public static GameObject currentPlatform;                           // GameObject that represent the current platform that the player in on
 
     /// <summary>
     /// Private variables
     /// </summary>
-    private Animator _anim;                     // Animator of the car
-    private bool canTurn = false;               // Bool that let the car do a 90 degree turn
-    Vector3 startPosition;                      // TEMPORARY
+    private Joystick _leftjoystick;                                     // Joystick du jeu
+    private Joystick _rightjoystick;                                     // Joystick du jeu
+    private Animator _anim;                                             // Animator of the car
+    private bool _canTurn = false;                                       // Bool that let the car do a 90 degree turn
+    Vector3 startPosition;                                              // TEMPORARY
 
+    [SerializeField] private float _moveForce = 5f;                     // Float qui représente la sensibilité du joystick
 
     /// <summary>
     /// Detect if there is a collision between the car and the current platform
@@ -35,6 +39,8 @@ public class CarController : MonoBehaviour
     void Start()
     {
         _anim = this.GetComponent<Animator>();
+        _leftjoystick = GameObject.FindWithTag("LeftJoystick").GetComponent<FixedJoystick>();
+        _rightjoystick = GameObject.FindWithTag("RightJoystick").GetComponent<FixedJoystick>();
         player = this.gameObject;
         startPosition = player.transform.position;
         GenerateWorld.RunDummy();
@@ -49,7 +55,7 @@ public class CarController : MonoBehaviour
             GenerateWorld.RunDummy();
 
         if (other is SphereCollider)
-            canTurn = true;
+            _canTurn = true;
     }
 
     /// <summary>
@@ -58,7 +64,7 @@ public class CarController : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if (other is SphereCollider)
-            canTurn = false;
+            _canTurn = false;
     }
     /// <summary>
     /// 
@@ -75,7 +81,7 @@ public class CarController : MonoBehaviour
     /// </summary>
     private void CarMouvement()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canTurn)
+        if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && _canTurn)
         {
             this.transform.Rotate(Vector3.up * 90);
             GenerateWorld.dummyTraveller.transform.forward = -this.transform.forward;
@@ -87,8 +93,9 @@ public class CarController : MonoBehaviour
             this.transform.position = new Vector3(startPosition.x,
                                             this.transform.position.y,
                                             startPosition.z);
+            _canTurn = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Q) && canTurn)
+        else if ((_rightjoystick.Horizontal == -1f || Input.GetKeyDown(KeyCode.Q)) && _canTurn)
         {
             this.transform.Rotate(Vector3.up * -90);
             GenerateWorld.dummyTraveller.transform.forward = -this.transform.forward;
@@ -100,15 +107,19 @@ public class CarController : MonoBehaviour
             this.transform.position = new Vector3(startPosition.x,
                                 this.transform.position.y,
                                 startPosition.z);
+            _canTurn = false;
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (_leftjoystick.Horizontal == -1f || Input.GetKey(KeyCode.A))
         {
-            //this.transform.Translate(Vector3.right * _speed * Time.deltaTime);
-            this.transform.Translate(-0.5f, 0, 0);
+            // Move to the left
+            this.transform.Translate(Vector3.right * -_moveForce * Time.deltaTime);
+            //Instantiate(_skidPrefab, this.transform.position, this.transform.rotation);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (_leftjoystick.Horizontal == 1f || Input.GetKey(KeyCode.D))
         {
-            this.transform.Translate(0.5f, 0, 0);
+            // Move to the right
+            this.transform.Translate(Vector3.right * _moveForce * Time.deltaTime);
+            //Instantiate(_skidPrefab, this.transform.position, this.transform.rotation);
         }
     }
 }
