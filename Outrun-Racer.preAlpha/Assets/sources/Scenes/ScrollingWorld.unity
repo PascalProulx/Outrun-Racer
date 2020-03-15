@@ -426,28 +426,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - prefab: {fileID: 8586345981087093546, guid: eebcf39df364e42c8911c4d8a512b49a,
+  - prefab: {fileID: 3747923449052191428, guid: fcb80a72b2884964cb8cccbc783dd8f9,
       type: 3}
     amount: 2
     expandable: 1
-  - prefab: {fileID: 6767760746024266913, guid: d7681f905c35f43d6b04539b862cea76,
+  - prefab: {fileID: 2999737461889254405, guid: 13a15406945b8cf4a8e2ea47f1303569,
+      type: 3}
+    amount: 5
+    expandable: 0
+  - prefab: {fileID: 5097027819086736090, guid: 1a904695af759ec46ac63a836367207b,
       type: 3}
     amount: 2
     expandable: 0
-  - prefab: {fileID: 1758237592479189522, guid: 16ad1a0255a2848f7a36694a36e714f2,
-      type: 3}
-    amount: 2
-    expandable: 0
-  - prefab: {fileID: 8291053646459418649, guid: 8734617a513ac44e9b45f50a2c356c60,
-      type: 3}
-    amount: 2
-    expandable: 0
-  - prefab: {fileID: 2920977700620933720, guid: 6699a5a136d324f3c852fddb52bd0629,
-      type: 3}
-    amount: 2
-    expandable: 0
-  - prefab: {fileID: 8050408931836218255, guid: 03ea7da068f164cecadce7dee435da9a,
-      type: 3}
+  - prefab: {fileID: 896312416903342581, guid: 598437bbb9a938f4994ab08e1c6c5006, type: 3}
     amount: 2
     expandable: 0
   pooledItems: []
@@ -539,7 +530,7 @@ PrefabInstance:
     - target: {fileID: 8586345981087093546, guid: eebcf39df364e42c8911c4d8a512b49a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebcf39df364e42c8911c4d8a512b49a, type: 3}
@@ -1213,17 +1204,17 @@ PrefabInstance:
     - target: {fileID: 3422318116112482712, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.03
       objectReference: {fileID: 0}
     - target: {fileID: 3422318116112482712, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.892
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 3422318116112482712, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.71
+      value: 33.64
       objectReference: {fileID: 0}
     - target: {fileID: 3422318116112482712, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
@@ -1283,7 +1274,7 @@ PrefabInstance:
     - target: {fileID: 3422318116112482715, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
       propertyPath: _carSpeed
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3422318116112482716, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
@@ -1297,6 +1288,86 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2abb351342d18d74f904b62a7478cc29, type: 3}
+--- !u!1001 &5911082433281078137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304273511742551574, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999737461889254405, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_Name
+      value: road1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999737461889254406, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3822247309040838107, guid: 22b70b494d8140c4fac6f7ca2d08f206,
+        type: 3}
+    - target: {fileID: 2999737461889254407, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13a15406945b8cf4a8e2ea47f1303569, type: 3}
 --- !u!222 &6725992285778053552
 CanvasRenderer:
   m_ObjectHideFlags: 0

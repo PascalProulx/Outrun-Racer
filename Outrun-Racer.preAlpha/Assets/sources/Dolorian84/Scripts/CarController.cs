@@ -81,8 +81,9 @@ public class CarController : MonoBehaviour
     /// </summary>
     private void CarMouvement()
     {
-        // Effectuer le mouvement de la voiture
+        // Move the car
         this.transform.position += this.transform.forward * _carSpeed;
+        // Set the inputs of the car and ajust the car mouvement according to the platform that the car is actually on
         if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && _canTurn)
         {
             this.transform.Rotate(Vector3.up * 90);

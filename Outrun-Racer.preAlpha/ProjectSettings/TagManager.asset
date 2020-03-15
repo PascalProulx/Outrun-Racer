@@ -13,6 +13,8 @@ TagManager:
   - platformZ
   - LeftJoystick
   - RightJoystick
+  - LeftCurve
+  - RightCurve
   layers:
   - Default
   - TransparentFX
