@@ -26,7 +26,7 @@ public class CarController : MonoBehaviour
     Vector3 startPosition;                                              // TEMPORARY
 
     [SerializeField] private float _moveForce = 5f;                     // Float qui représente la sensibilité du joystick
-
+    [SerializeField] private float _carSpeed = 0.1f;                // Float qui représente la vitesse de la voiture
     /// <summary>
     /// Detect if there is a collision between the car and the current platform
     /// </summary>
@@ -81,6 +81,8 @@ public class CarController : MonoBehaviour
     /// </summary>
     private void CarMouvement()
     {
+        // Effectuer le mouvement de la voiture
+        this.transform.position += this.transform.forward * _carSpeed;
         if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && _canTurn)
         {
             this.transform.Rotate(Vector3.up * 90);
@@ -90,9 +92,9 @@ public class CarController : MonoBehaviour
             if (GenerateWorld.lastPlatform.tag != "platformTSection")
                 GenerateWorld.RunDummy();
 
-            this.transform.position = new Vector3(startPosition.x,
+            this.transform.position = new Vector3(this.transform.position.x,
                                             this.transform.position.y,
-                                            startPosition.z);
+                                            this.transform.position.z);
             _canTurn = false;
         }
         else if ((_rightjoystick.Horizontal == -1f || Input.GetKeyDown(KeyCode.Q)) && _canTurn)
@@ -104,9 +106,9 @@ public class CarController : MonoBehaviour
             if (GenerateWorld.lastPlatform.tag != "platformTSection")
                 GenerateWorld.RunDummy();
 
-            this.transform.position = new Vector3(startPosition.x,
+            this.transform.position = new Vector3(this.transform.position.x,
                                 this.transform.position.y,
-                                startPosition.z);
+                                this.transform.position.z);
             _canTurn = false;
         }
         else if (_leftjoystick.Horizontal == -1f || Input.GetKey(KeyCode.A))
