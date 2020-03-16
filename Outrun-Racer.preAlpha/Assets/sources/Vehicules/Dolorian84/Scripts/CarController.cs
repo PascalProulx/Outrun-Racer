@@ -15,18 +15,18 @@ public class CarController : MonoBehaviour
 
     public static GameObject player;                                    // GameObject that represent the player
     public static GameObject currentPlatform;                           // GameObject that represent the current platform that the player in on
-
+    public static bool _canTurn = false;                                       // Bool that let the car do a 90 degree turn
     /// <summary>
     /// Private variables
     /// </summary>
-    private Joystick _leftjoystick;                                     // Joystick du jeu
-    private Joystick _rightjoystick;                                     // Joystick du jeu
-    private Animator _anim;                                             // Animator of the car
-    private bool _canTurn = false;                                       // Bool that let the car do a 90 degree turn
+    private Joystick _leftjoystick;                                     // Joystick who move the car horizontally
+    private Joystick _rightjoystick;                                    // Joystick who turn the car 90 degree on the y axis
+    
     Vector3 startPosition;                                              // TEMPORARY
 
-    [SerializeField] private float _moveForce = 5f;                     // Float qui représente la sensibilité du joystick
-    [SerializeField] private float _carSpeed = 0.1f;                // Float qui représente la vitesse de la voiture
+    [SerializeField] private float _moveForce = 5f;                     // Float that represent the speed of the joysticks
+    [SerializeField] private float _carSpeed = 0.1f;                    // Float that represent the car speed's
+
     /// <summary>
     /// Detect if there is a collision between the car and the current platform
     /// </summary>
@@ -38,7 +38,6 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _anim = this.GetComponent<Animator>();
         _leftjoystick = GameObject.FindWithTag("LeftJoystick").GetComponent<FixedJoystick>();
         _rightjoystick = GameObject.FindWithTag("RightJoystick").GetComponent<FixedJoystick>();
         player = this.gameObject;
