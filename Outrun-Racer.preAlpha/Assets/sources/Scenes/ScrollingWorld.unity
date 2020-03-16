@@ -12975,6 +12975,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 238768509, guid: 2abb351342d18d74f904b62a7478cc29, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360509050, guid: 2abb351342d18d74f904b62a7478cc29, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3422318116112482712, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
       propertyPath: m_LocalPosition.x
