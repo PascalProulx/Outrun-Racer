@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Script that create a pooling system wich take a gameObject randomly and instantiate it
 /// </summary>
+
 [System.Serializable]
 public class PoolItem
 {
@@ -34,6 +35,7 @@ public class Pool : MonoBehaviour
         }
     }
 
+    // Method that randomly pool a object from the pool
     public GameObject GetRandom()
     {
         Utils.Shuffle(pooledItems);
@@ -61,6 +63,7 @@ public class Pool : MonoBehaviour
     }
 }
 
+// Fisher shuffle's, a method that can shuffle a array or list of objects
 public static class Utils
 {
     public static System.Random r = new System.Random();

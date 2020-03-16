@@ -10,15 +10,12 @@ public class CarController : MonoBehaviour
 {
     
     /// <summary>
-    /// Public static variables
+    /// Fields
     /// </summary>
-
     public static GameObject player;                                    // GameObject that represent the player
     public static GameObject currentPlatform;                           // GameObject that represent the current platform that the player in on
-    public static bool _canTurn = false;                                       // Bool that let the car do a 90 degree turn
-    /// <summary>
-    /// Private variables
-    /// </summary>
+    public static bool _canTurn = false;                                // Bool that let the car do a 90 degree turn
+
     private Joystick _leftjoystick;                                     // Joystick who move the car horizontally
     private Joystick _rightjoystick;                                    // Joystick who turn the car 90 degree on the y axis
     
@@ -26,6 +23,10 @@ public class CarController : MonoBehaviour
 
     [SerializeField] private float _moveForce = 5f;                     // Float that represent the speed of the joysticks
     [SerializeField] private float _carSpeed = 0.1f;                    // Float that represent the car speed's
+
+    [Header("Car SFX")]
+    [SerializeField] private AudioClip _accelLowSFX;                        // Audioclip that represent the low accelleration of the car
+    [SerializeField] private AudioClip _accelHighSFX;                        // Audioclip that represent the high accelleration of the car
 
     /// <summary>
     /// Detect if there is a collision between the car and the current platform
@@ -38,11 +39,18 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get the joysticks gameObjects
         _leftjoystick = GameObject.FindWithTag("LeftJoystick").GetComponent<FixedJoystick>();
         _rightjoystick = GameObject.FindWithTag("RightJoystick").GetComponent<FixedJoystick>();
+
+        // Make this object static
         player = this.gameObject;
-        startPosition = player.transform.position;
+
+        // Generate the platforms for the player
         GenerateWorld.RunDummy();
+
+        // Play the audioClip of the low acceleration
+        AudioManager.Instance.PlayLoopSFX(_accelLowSFX);
     }
 
     /// <summary>
@@ -65,13 +73,11 @@ public class CarController : MonoBehaviour
         if (other is SphereCollider)
             _canTurn = false;
     }
-    /// <summary>
-    /// 
-    /// </summary>
 
     // Update is called once per frame
     void Update()
     {
+        // Move the car
         CarMouvement();
     }
 
@@ -80,46 +86,61 @@ public class CarController : MonoBehaviour
     /// </summary>
     private void CarMouvement()
     {
-        // Move the car
+        // Move the car forward
         this.transform.position += this.transform.forward * _carSpeed;
+
         // Set the inputs of the car and ajust the car mouvement according to the platform that the car is actually on
         if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && _canTurn)
         {
+            // Rotate the car to the left if it's on a T-section platform
             this.transform.Rotate(Vector3.up * 90);
+
+            // Change the platforms spawning location so that it can face the car
             GenerateWorld.dummyTraveller.transform.forward = -this.transform.forward;
             GenerateWorld.RunDummy();
 
+            // Continue to generate the platforms if the last platform was not a T-section platform
             if (GenerateWorld.lastPlatform.tag != "platformTSection")
                 GenerateWorld.RunDummy();
 
+            // Place the platforms on the car position's
             this.transform.position = new Vector3(this.transform.position.x,
                                             this.transform.position.y,
                                             this.transform.position.z);
+
+            // Make sure that the car can't no longer turn
             _canTurn = false;
         }
         else if ((_rightjoystick.Horizontal == -1f || Input.GetKeyDown(KeyCode.Q)) && _canTurn)
         {
+            // Rotate the car to the right if it's on a T-section platform
             this.transform.Rotate(Vector3.up * -90);
+
+            // Change the platforms spawning location so that it can face the car
             GenerateWorld.dummyTraveller.transform.forward = -this.transform.forward;
             GenerateWorld.RunDummy();
 
+            // Continue to generate the platforms if the last platform was not a T-section platform
             if (GenerateWorld.lastPlatform.tag != "platformTSection")
                 GenerateWorld.RunDummy();
 
+            // Place the platforms on the car position's
             this.transform.position = new Vector3(this.transform.position.x,
                                 this.transform.position.y,
                                 this.transform.position.z);
+
+            // Make sure that the car can't no longer turn
             _canTurn = false;
         }
         else if (_leftjoystick.Horizontal == -1f || Input.GetKey(KeyCode.A))
         {
-            // Move to the left
+            // Move the car to the left
             this.transform.Translate(Vector3.right * -_moveForce * Time.deltaTime);
             //Instantiate(_skidPrefab, this.transform.position, this.transform.rotation);
         }
         else if (_leftjoystick.Horizontal == 1f || Input.GetKey(KeyCode.D))
         {
-            // Move to the right
+            // Move the car to the right
             this.transform.Translate(Vector3.right * _moveForce * Time.deltaTime);
             //Instantiate(_skidPrefab, this.transform.position, this.transform.rotation);
         }
