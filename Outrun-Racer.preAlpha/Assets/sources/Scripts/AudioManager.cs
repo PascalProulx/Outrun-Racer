@@ -163,4 +163,9 @@ public class AudioManager : MonoBehaviour
     {
         _sfxSource.volume = volume;
     }
+
+    public void StopSFX()
+    {
+        _sfxSource.Stop();
+    }
 }

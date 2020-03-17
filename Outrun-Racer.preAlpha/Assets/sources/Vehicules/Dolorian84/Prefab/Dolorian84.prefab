@@ -694,6 +694,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveForce: 5
   _carSpeed: 0.1
+  _accelLowSFX: {fileID: 8300000, guid: d56384dd2363ead4db42b4c54d6b5ef2, type: 3}
+  _accelHighSFX: {fileID: 8300000, guid: 98be8c04e5cf9ad47bcc98fdb36367b0, type: 3}
+  _skidScreechSFX: {fileID: 8300000, guid: 7d4c9455f48feb244ab2a670163ddeba, type: 3}
 --- !u!1 &3422318116457478726
 GameObject:
   m_ObjectHideFlags: 0

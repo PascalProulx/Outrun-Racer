@@ -13001,9 +13001,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422318116112482715, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
-      propertyPath: _accelLowSFX
+      propertyPath: _engineLowSFX
       value: 
       objectReference: {fileID: 8300000, guid: d56384dd2363ead4db42b4c54d6b5ef2, type: 3}
+    - target: {fileID: 3422318116112482715, guid: 2abb351342d18d74f904b62a7478cc29,
+        type: 3}
+      propertyPath: _engineHighSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 98be8c04e5cf9ad47bcc98fdb36367b0, type: 3}
+    - target: {fileID: 3422318116112482715, guid: 2abb351342d18d74f904b62a7478cc29,
+        type: 3}
+      propertyPath: _skidScreechSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 80deeb3bdaad37f4b8876d39a2c296c9, type: 3}
+    - target: {fileID: 3422318116112482715, guid: 2abb351342d18d74f904b62a7478cc29,
+        type: 3}
+      propertyPath: _skidScreechSFX2
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d4c9455f48feb244ab2a670163ddeba, type: 3}
     - target: {fileID: 3422318116112482716, guid: 2abb351342d18d74f904b62a7478cc29,
         type: 3}
       propertyPath: m_Name
