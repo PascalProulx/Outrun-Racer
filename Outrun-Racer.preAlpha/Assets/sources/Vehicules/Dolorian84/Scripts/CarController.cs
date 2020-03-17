@@ -18,6 +18,7 @@ public class CarController : MonoBehaviour
 
     private Joystick _leftjoystick;                                     // Joystick who move the car horizontally
     private Joystick _rightjoystick;                                    // Joystick who turn the car 90 degree on the y axis
+    protected JoyStickHandler _leftJHandler;
 
     private AudioSource _engineLowSource;                               // AudioSource that represent the low accelleration of the car
     private AudioSource _engineHighSource;                              // AudioSource that represent the low accelleration of the car
@@ -25,7 +26,8 @@ public class CarController : MonoBehaviour
 
     Vector3 startPosition;                                              // TEMPORARY
     private bool _carIsMoving = false;
-    private bool _sfxIsPlaying = false;
+    private bool _sfxToggle;
+    private bool _sfxCanPlay;
 
     [SerializeField] private float _moveForce = 5f;                     // Float that represent the speed of the joysticks
     [SerializeField] private float _carSpeed = 0.1f;                    // Float that represent the car speed's
@@ -51,7 +53,7 @@ public class CarController : MonoBehaviour
         // Get the joysticks gameObjects
         _leftjoystick = GameObject.FindWithTag("LeftJoystick").GetComponent<FixedJoystick>();
         _rightjoystick = GameObject.FindWithTag("RightJoystick").GetComponent<FixedJoystick>();
-
+        _leftJHandler = FindObjectOfType<JoyStickHandler>();
         // Make this object static
         player = this.gameObject;
 
@@ -66,6 +68,8 @@ public class CarController : MonoBehaviour
         PlayEngineLowSFX(_engineLowSFX);
         PlayEngineHighSFX(_engineHighSFX);
         AudioManager.Instance.PlaySFX(_skidScreechSFX2);
+
+
     }
 
     /// <summary>
@@ -103,17 +107,18 @@ public class CarController : MonoBehaviour
             _carIsMoving = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyUp(KeyCode.A) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.A) && Input.GetKeyUp(KeyCode.D)))
-        {
-            PlaySkidSFX();
-        }else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-        {
-            _skidSource.Stop();
-        }
+        // Set the skid sound of the car (for the PC version)
+        PcSkidSFX();
+
+        // Set the skid sound of the car (for the mobile version)
+        MobileSkidSFX();
+
+         
+
 
     }
 
-    #region
+    #region Car mouvements's
     /// <summary>
     /// Function that move the car
     /// </summary>
@@ -177,16 +182,13 @@ public class CarController : MonoBehaviour
             {
                 // Move the car to the right
                 this.transform.Translate(Vector3.right * _moveForce * Time.deltaTime);
-                _sfxIsPlaying = true;
                 //Instantiate(_skidPrefab, this.transform.position, this.transform.rotation);
             }else if (Input.GetKeyDown(KeyCode.A))
             {
                 // Move the car to the right
                 this.transform.Translate(Vector3.right * _moveForce * Time.deltaTime);
-                
             }
-        }
-        
+        }   
     }
     #endregion
 
@@ -216,10 +218,48 @@ public class CarController : MonoBehaviour
     }
 
     /// <summary>
-    /// Method that play a sound when the car is moving left and right
+    /// Methode that play a sound when the car is moving (for the PC version)
     /// </summary>
-    /// <param name="clip"></param>
-    private void PlaySkidSFX()
+    private void PcSkidSFX()
+    {
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyUp(KeyCode.A) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.A) && Input.GetKeyUp(KeyCode.D)))
+        {
+            PlayLoopSkidSFX();
+        }
+        else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            _skidSource.Stop();
+        }
+    }
+
+    /// <summary>
+    /// Methode that play a sound when the car is moving (for the PC version)
+    /// </summary>
+    private void MobileSkidSFX()
+    {
+        if (!_sfxToggle && _leftJHandler._isPressed)
+        {
+            _sfxToggle = true;
+            _skidSource.loop = true;
+            _skidSource.clip = _skidScreechSFX;
+            _skidSource.volume = 1f;
+            _skidSource.Play();
+        }
+
+        if (_sfxToggle && !_leftJHandler._isPressed)
+        {
+            _skidSource.Pause();
+        }
+        else
+        {
+            _skidSource.UnPause();
+        }
+    }
+
+    /// <summary>
+    /// Method that play a looped sound when the car is moving left and right
+    /// </summary>
+    private void PlayLoopSkidSFX()
     {
         _skidSource.loop = true;
         _skidSource.clip = _skidScreechSFX;

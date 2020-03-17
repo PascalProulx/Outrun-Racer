@@ -12406,8 +12406,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 2929252283331017798}
   - {fileID: 6725992285778053554}
+  - {fileID: 2929252283331017798}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12819,7 +12819,7 @@ RectTransform:
   m_Children:
   - {fileID: 2929252285223714748}
   m_Father: {fileID: 1360448447}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12838,6 +12838,7 @@ GameObject:
   - component: {fileID: 2929252283331017796}
   - component: {fileID: 2929252283331017797}
   - component: {fileID: 2929252283331017803}
+  - component: {fileID: 2929252283331017800}
   m_Layer: 5
   m_Name: Left Joystick
   m_TagString: LeftJoystick
@@ -12845,6 +12846,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2929252283331017800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929252283331017799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a559c9679c81e41b56a209ab1395c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPressed: 0
 --- !u!114 &2929252283331017803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13194,24 +13208,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: road1
       objectReference: {fileID: 0}
-    - target: {fileID: 2999737461889254405, guid: 13a15406945b8cf4a8e2ea47f1303569,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2999737461889254406, guid: 13a15406945b8cf4a8e2ea47f1303569,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 3822247309040838107, guid: 22b70b494d8140c4fac6f7ca2d08f206,
-        type: 3}
-    - target: {fileID: 2999737461889254407, guid: 13a15406945b8cf4a8e2ea47f1303569,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2999737461889254404, guid: 13a15406945b8cf4a8e2ea47f1303569, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13a15406945b8cf4a8e2ea47f1303569, type: 3}
 --- !u!222 &6725992285778053552
 CanvasRenderer:
@@ -13262,7 +13259,7 @@ RectTransform:
   m_Children:
   - {fileID: 6725992287070931528}
   m_Father: {fileID: 1360448447}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

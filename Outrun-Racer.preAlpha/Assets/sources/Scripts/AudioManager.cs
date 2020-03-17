@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource _musicSource;
     private AudioSource _musicSource2;
     private AudioSource _sfxSource;
+    private AudioSource _sfxSource2;
     private bool _firstMsourceIsPlaying;
 
     // Start is called before the first frame update
@@ -70,6 +71,14 @@ public class AudioManager : MonoBehaviour
         AudioSource activeSource = (_firstMsourceIsPlaying) ? _musicSource : _musicSource2;
 
         StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
+    }
+
+    public void PlaySFXWithFade(AudioClip newClip, float transitionTime = 1.0f)
+    {
+        // Determine wich source is active (terniary operation)
+        AudioSource activeSource = (_firstMsourceIsPlaying) ? _sfxSource : _sfxSource2;
+
+        StartCoroutine(UpdateSFXWithFade(activeSource, newClip, transitionTime));
     }
 
     public void PlayMusicWithCrossFade(AudioClip musicClip, float transitionTime = 1.0f)
@@ -126,6 +135,32 @@ public class AudioManager : MonoBehaviour
         }
 
         original.Stop();
+    }
+
+    private IEnumerator UpdateSFXWithFade(AudioSource activeSource, AudioClip newClip, float transitionTime)
+    {
+        // Make sure that the source is active and playing
+        if (activeSource.isPlaying)
+            activeSource.Play();
+        float t = 0.0f;
+
+        // Fade out
+        for (t = 0; t < transitionTime; t += Time.deltaTime)
+        {
+            activeSource.volume = (1 - (t / transitionTime));
+            yield return null;
+        }
+
+        activeSource.Stop();
+        activeSource.clip = newClip;
+        activeSource.Play();
+
+        // Fade in
+        for (t = 0; t < transitionTime; t += Time.deltaTime)
+        {
+            activeSource.volume = (t / transitionTime);
+            yield return null;
+        }
     }
 
     public void PlaySFX(AudioClip clip)
