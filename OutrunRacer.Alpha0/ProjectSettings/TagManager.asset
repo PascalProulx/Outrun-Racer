@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - roadUp
+  - stairsUp
+  - platformZ
+  - roadDown
+  - platformZSplit
+  - stairsDown
+  - platformTSection
+  - platformZThin
+  - RightCurve
+  - LeftCurve
+  - RightJoystick
+  - LeftJoystick
   layers:
   - Default
   - TransparentFX
