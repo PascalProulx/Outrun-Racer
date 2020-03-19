@@ -31,8 +31,8 @@ public class GenerateWorld : MonoBehaviour
                 dummyTraveller.transform.position = lastPlatform.transform.position +
                     CarController.player.transform.forward * 24.2f;
 
-            if (lastPlatform.tag == "stairsUp")
-                dummyTraveller.transform.Translate(0, 5, 0);
+            if (lastPlatform.tag == "roadUp")
+                dummyTraveller.transform.Translate(0, 1.932f, 0);
         }
 
         lastPlatform = p;
@@ -40,9 +40,9 @@ public class GenerateWorld : MonoBehaviour
         p.transform.position = dummyTraveller.transform.position;
         p.transform.rotation = dummyTraveller.transform.rotation;
 
-        if (p.tag == "stairsDown")
+        if (p.tag == "roadDown")
         {
-            dummyTraveller.transform.Translate(0, -5, 0);
+            dummyTraveller.transform.Translate(0, -1.932f, 0);
             p.transform.Rotate(0, 180, 0);
             p.transform.position = dummyTraveller.transform.position;
         }

@@ -128,13 +128,13 @@ public class CarController : MonoBehaviour
         {
             // Move the car forward
             this.transform.position += this.transform.forward * _carSpeed;
-
+            
             // Set the inputs of the car and ajust the car mouvement according to the platform that the car is actually on
             if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && _canTurn)
             {
                 // Rotate the car to the left if it's on a T-section platform
                 this.transform.Rotate(Vector3.up * 90);
-
+                AudioManager.Instance.PlaySFX(_skidScreechSFX2, 0.5f);
                 // Change the platforms spawning location so that it can face the car
                 GenerateWorld.dummyTraveller.transform.forward = -this.transform.forward;
                 GenerateWorld.RunDummy();
@@ -155,7 +155,7 @@ public class CarController : MonoBehaviour
             {
                 // Rotate the car to the right if it's on a T-section platform
                 this.transform.Rotate(Vector3.up * -90);
-
+                AudioManager.Instance.PlaySFX(_skidScreechSFX2, 0.5f);
                 // Change the platforms spawning location so that it can face the car
                 GenerateWorld.dummyTraveller.transform.forward = -this.transform.forward;
                 GenerateWorld.RunDummy();
