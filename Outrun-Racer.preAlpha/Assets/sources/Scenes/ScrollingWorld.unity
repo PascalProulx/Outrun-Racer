@@ -424,7 +424,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1335,6 +1335,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: road1
       objectReference: {fileID: 0}
+    - target: {fileID: 3575263649499279577, guid: 13a15406945b8cf4a8e2ea47f1303569,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61a50463137ae2a4c9715f99d605ab5a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13a15406945b8cf4a8e2ea47f1303569, type: 3}
 --- !u!222 &6725992285778053552
