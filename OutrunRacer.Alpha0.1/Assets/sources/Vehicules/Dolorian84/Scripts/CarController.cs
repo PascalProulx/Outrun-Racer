@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CarController : MonoBehaviour
 {
-    
+    private static CarController _instance;
     /// <summary>
     /// Fields
     /// </summary>
@@ -38,6 +38,9 @@ public class CarController : MonoBehaviour
     [SerializeField] private AudioClip _skidScreechSFX;                 // Audioclip that represent the skid screeching of the car
     [SerializeField] private AudioClip _skidScreechSFX2;                 // Audioclip that represent the skid screeching of the car
 
+    public float CarSpeed { get => _carSpeed; set => _carSpeed = value; }
+    public static CarController Instance { get => _instance; set => _instance = value; }
+
 
     /// <summary>
     /// Detect if there is a collision between the car and the current platform
@@ -45,6 +48,11 @@ public class CarController : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         currentPlatform = other.gameObject;
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     // Start is called before the first frame update
@@ -56,7 +64,7 @@ public class CarController : MonoBehaviour
         _leftJHandler = FindObjectOfType<JoyStickHandler>();
         // Make this object static
         player = this.gameObject;
-
+        startPosition = player.transform.position;
         // Generate the platforms for the player
         GenerateWorld.RunDummy();
 
@@ -127,8 +135,8 @@ public class CarController : MonoBehaviour
         if (_carIsMoving == true)
         {
             // Move the car forward
-            this.transform.position += this.transform.forward * _carSpeed * Time.deltaTime;
-            
+            //this.transform.position += this.transform.forward * CarSpeed * Time.deltaTime;
+
             // Set the inputs of the car and ajust the car mouvement according to the platform that the car is actually on
             if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && _canTurn)
             {
@@ -144,9 +152,9 @@ public class CarController : MonoBehaviour
                     GenerateWorld.RunDummy();
 
                 // Place the platforms on the car position's
-                this.transform.position = new Vector3(this.transform.position.x,
+                this.transform.position = new Vector3(startPosition.x,
                                                 this.transform.position.y,
-                                                this.transform.position.z);
+                                                startPosition.z);
 
                 // Make sure that the car can't no longer turn
                 _canTurn = false;
@@ -165,9 +173,9 @@ public class CarController : MonoBehaviour
                     GenerateWorld.RunDummy();
 
                 // Place the platforms on the car position's
-                this.transform.position = new Vector3(this.transform.position.x,
+                this.transform.position = new Vector3(startPosition.x,
                                     this.transform.position.y,
-                                    this.transform.position.z);
+                                    startPosition.z);
 
                 // Make sure that the car can't no longer turn
                 _canTurn = false;

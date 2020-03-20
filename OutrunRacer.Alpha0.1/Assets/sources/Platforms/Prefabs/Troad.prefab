@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5125836980446528463}
   - component: {fileID: 4650719841811171888}
   - component: {fileID: 695386652057610533}
+  - component: {fileID: 8367842586857811961}
   m_Layer: 0
   m_Name: Troad
   m_TagString: platformTSection
@@ -149,5 +150,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3abfbfa6145a46e9b6e6d0f37f05a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8367842586857811961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747923449052191428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1357e1f23579e4b1d8d69d4fc5c70e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

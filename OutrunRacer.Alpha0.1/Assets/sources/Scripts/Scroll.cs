@@ -8,7 +8,7 @@ public class Scroll : MonoBehaviour
 {
     void FixedUpdate()
     {
-        this.transform.position += DummyCar.dummy.transform.forward * -10f * Time.deltaTime;
+        this.transform.position += CarController.player.transform.forward * -CarController.Instance.CarSpeed * Time.deltaTime;
 
         if (DummyCar.currentPlatform == null) return;
 
