@@ -122,12 +122,15 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!224 &60549795 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
     type: 3}
   m_PrefabInstance: {fileID: 404991298}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of ad95e14... J'ai fini les animations pour vrai
 =======
 >>>>>>> parent of ad95e14... J'ai fini les animations pour vrai
 --- !u!1001 &400408067
@@ -1017,6 +1020,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 6839072114100565229, guid: b5a8ea27beba05848af88d805b55dfd5,
         type: 3}
       propertyPath: m_Enabled
@@ -1031,6 +1035,8 @@ PrefabInstance:
     - {fileID: 3299078920103108855, guid: b5a8ea27beba05848af88d805b55dfd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b5a8ea27beba05848af88d805b55dfd5, type: 3}
 =======
+=======
+>>>>>>> parent of ad95e14... J'ai fini les animations pour vrai
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b73f4f47d2f3a8443a1237b80f6fef2d, type: 3}
 >>>>>>> parent of ad95e14... J'ai fini les animations pour vrai
