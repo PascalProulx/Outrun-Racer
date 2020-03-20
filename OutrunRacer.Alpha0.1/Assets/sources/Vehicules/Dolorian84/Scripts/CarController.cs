@@ -127,7 +127,7 @@ public class CarController : MonoBehaviour
         if (_carIsMoving == true)
         {
             // Move the car forward
-            this.transform.position += this.transform.forward * _carSpeed;
+            this.transform.position += this.transform.forward * _carSpeed * Time.deltaTime;
             
             // Set the inputs of the car and ajust the car mouvement according to the platform that the car is actually on
             if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && _canTurn)
