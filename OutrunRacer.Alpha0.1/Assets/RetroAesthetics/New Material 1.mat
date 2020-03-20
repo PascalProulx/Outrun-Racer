@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: New Material 1
   m_Shader: {fileID: 4800000, guid: dfa17a30b23e94b049ffccdb334d21bc, type: 3}
   m_ShaderKeywords: _SUNENABLED_ON
   m_LightmapFlags: 4
@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: a8c43fa8dc16b406aa969ed0b98868a1, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -68,7 +68,7 @@ Material:
     - _DirectionYaw: 0
     - _DstBlend: 0
     - _Exponent: 1.09
-    - _Gain: 1.4
+    - _Gain: 0.99
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -81,14 +81,14 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _StripesDistance: 0.01132
-    - _StripesExponent1: 3.02
-    - _StripesHeight: 0.558
+    - _StripesExponent1: 3.11
+    - _StripesHeight: 0.518
     - _StripesWidth: 0.00759
     - _SunEnabled: 1
     - _SunExponent: 4.96
-    - _SunPitch: 108.9
-    - _SunSize: 0.0414
-    - _SunYaw: 86.2
+    - _SunPitch: 99.5
+    - _SunSize: 0.0107
+    - _SunYaw: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -99,5 +99,5 @@ Material:
     - _ColorSun2: {r: 0.97, g: 0.17, b: 0.21, a: 0}
     - _Direction: {r: 0, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SunDirection: {r: 0.94400537, g: -0.32391748, b: 0.06270078, a: 0}
-    - _SunDirectionP: {r: -0.32320526, g: -0.9460854, b: -0.021467272, a: 0}
+    - _SunDirection: {r: 0, g: -0.16504754, b: 0.9862856, a: 0}
+    - _SunDirectionP: {r: -0, g: -0.9862856, b: -0.16504747, a: 0}
