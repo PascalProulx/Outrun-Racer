@@ -73,11 +73,14 @@ public class CarController : MonoBehaviour
         _engineHighSource = this.gameObject.AddComponent<AudioSource>();
         _skidSource = this.gameObject.AddComponent<AudioSource>();
 
+        // Play the car's engine SFX
         PlayEngineLowSFX(_engineLowSFX);
         PlayEngineHighSFX(_engineHighSFX);
         AudioManager.Instance.PlaySFX(_skidScreechSFX2);
 
-
+        // Set the right joystick to false ( only for the level with no T-section)
+        _rightjoystick.gameObject.SetActive(false);
+        //_leftjoystick.gameObject.SetActive(false);
     }
 
     /// <summary>

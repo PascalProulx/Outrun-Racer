@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Script that create a dummy so that the platforms can spawn
+/// Script that create a dummy so that the platforms can spawn, use only in the menu
 /// </summary>
 public class DummyCar : MonoBehaviour
 {

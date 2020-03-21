@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Script that make a object scroll
+/// Script that scroll the platforms
 /// </summary>
 public class Scroll : MonoBehaviour
 {

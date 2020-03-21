@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script use only for the menu that scroll the platforms
+/// </summary>
 public class ScrollDummy : MonoBehaviour
 {
     void FixedUpdate()
