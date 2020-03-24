@@ -105,7 +105,7 @@ public class CarController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Move the car
         _carIsMoving = true;
