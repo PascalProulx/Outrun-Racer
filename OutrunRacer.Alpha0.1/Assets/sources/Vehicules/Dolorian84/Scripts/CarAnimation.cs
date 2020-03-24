@@ -40,7 +40,6 @@ public class CarAnimation : MonoBehaviour
         {
             // If not, play the Idle animation
             _anim.SetBool("strafeLeft", false);
-            _anim.SetBool("isIdle", true);
         }
         if (_leftjoystick.Horizontal == 1f || Input.GetKey(KeyCode.D))
         {
