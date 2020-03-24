@@ -187,6 +187,7 @@ public class CarController : MonoBehaviour
             {
                 // Move the car to the left
                 this.transform.Translate(Vector3.right * -_moveForce * Time.deltaTime);
+                this.transform.Rotate(Vector3.up * -5);
                 //Instantiate(_skidPrefab, this.transform.position, this.transform.rotation);
             }
             else if (_leftjoystick.Horizontal == 1f || Input.GetKey(KeyCode.D))
