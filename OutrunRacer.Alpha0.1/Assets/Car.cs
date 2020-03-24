@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-/// <summary>
-/// Script that control the car 
-/// </summary>
-public class CarController : MonoBehaviour
+public class Car : MonoBehaviour
 {
-    private static CarController _instance;
+    private static Car _instance;
     /// <summary>
     /// Fields
     /// </summary>
@@ -39,7 +35,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private AudioClip _skidScreechSFX2;                 // Audioclip that represent the skid screeching of the car
 
     public float CarSpeed { get => _carSpeed; set => _carSpeed = value; }
-    public static CarController Instance { get => _instance; set => _instance = value; }
+    public static Car Instance { get => _instance; set => _instance = value; }
 
 
     /// <summary>
@@ -124,7 +120,7 @@ public class CarController : MonoBehaviour
         // Set the skid sound of the car (for the mobile version)
         MobileSkidSFX();
 
-         
+
 
 
     }
@@ -195,7 +191,7 @@ public class CarController : MonoBehaviour
                 this.transform.Translate(Vector3.right * _moveForce * Time.deltaTime);
                 //Instantiate(_skidPrefab, this.transform.position, this.transform.rotation);
             }
-        }   
+        }
     }
     #endregion
 

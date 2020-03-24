@@ -55,7 +55,7 @@ public class CarAnimation : MonoBehaviour
         }
 
         // Play the animations of the car when it can turn on a T-section 
-        if ((_rightjoystick.Horizontal == -1f || Input.GetKeyDown(KeyCode.Q)) && CarController._canTurn)
+        if ((_rightjoystick.Horizontal == -1f || Input.GetKeyDown(KeyCode.Q)) && Car._canTurn)
         {
             // Play the animation when the car turn to the left
             _anim.SetBool("driftLeft", true);
@@ -66,7 +66,7 @@ public class CarAnimation : MonoBehaviour
             _anim.SetBool("driftLeft", false);
             _anim.SetBool("isIdle", true);
         }
-        if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && CarController._canTurn)
+        if ((_rightjoystick.Horizontal == 1f || Input.GetKeyDown(KeyCode.E)) && Car._canTurn)
         {
             // Play the animation when the car turn to the right
             _anim.SetBool("driftRight", true);
