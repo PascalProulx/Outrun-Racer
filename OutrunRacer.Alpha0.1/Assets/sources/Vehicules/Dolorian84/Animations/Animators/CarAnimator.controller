@@ -56,6 +56,7 @@ AnimatorStateTransition:
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1101 &-7705561236492421230
 AnimatorStateTransition:
@@ -86,6 +87,8 @@ AnimatorStateTransition:
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 >>>>>>> parent of 9fa3f44... Revert "Transitions des anims réussi"
+=======
+>>>>>>> parent of 1ec30ac... Amélioration de l'animation
 --- !u!1102 &-7636813929168139888
 AnimatorState:
   serializedVersion: 5
@@ -138,6 +141,7 @@ AnimatorStateTransition:
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1101 &-6961844431060160785
 AnimatorStateTransition:
@@ -168,6 +172,8 @@ AnimatorStateTransition:
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 >>>>>>> parent of 9fa3f44... Revert "Transitions des anims réussi"
+=======
+>>>>>>> parent of 1ec30ac... Amélioration de l'animation
 --- !u!1107 &-6549566484686349933
 AnimatorStateMachine:
   serializedVersion: 5
