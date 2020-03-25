@@ -26,10 +26,10 @@ public class GenerateWorld : MonoBehaviour
         {
             if(lastPlatform.tag == "platformTSection")
                 dummyTraveller.transform.position = lastPlatform.transform.position +
-                    Car.player.transform.forward * 20;
+                    CarController.player.transform.forward * 20;
             else
                 dummyTraveller.transform.position = lastPlatform.transform.position +
-                    Car.player.transform.forward * 24.2f;
+                    CarController.player.transform.forward * 24.2f;
 
             if (lastPlatform.tag == "roadUp")
                 dummyTraveller.transform.Translate(0, 1.932f, 0);
