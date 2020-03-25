@@ -411,8 +411,11 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 046dd8d6ecf2b41428a2fcd67afb2db5, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 9fa3f44... Revert "Transitions des anims réussi"
+=======
+>>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
 >>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
@@ -812,6 +815,9 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
 >>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
@@ -863,8 +869,11 @@ Material:
     - _OffsetPos: {r: 0, g: 0, b: 0, a: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 9fa3f44... Revert "Transitions des anims réussi"
+=======
+>>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
 >>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
@@ -1871,6 +1880,7 @@ PrefabInstance:
       objectReference: {fileID: 176885726}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       objectReference: {fileID: 1920105172}
     - target: {fileID: 5918428633075035169, guid: d653e272220313b4b88130866b132d9a,
@@ -1889,6 +1899,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 >>>>>>> parent of 9fa3f44... Revert "Transitions des anims réussi"
+=======
+>>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
 >>>>>>> parent of 1ec30ac... Amélioration de l'animation
 =======
